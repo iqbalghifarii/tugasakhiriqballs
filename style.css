@@ -60,3 +60,35 @@ a {
     transition: 0.3s;
 }
 
+/* Container utama untuk sapaan dan tombol */
+.user-container {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.05); /* Background tipis agar terlihat eksklusif */
+    padding: 5px 15px;
+    border-radius: 30px;
+    margin-left: 15px;
+}
+
+.user-greeting {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e1e1e;
+    margin-right: 12px; /* Memberi jarak agar tidak menempel ke tombol */
+    white-space: nowrap; /* Mencegah teks turun ke bawah */
+}
+
+.btn-logout-new {
+    background-color: #1e1e1e; /* Warna hitam sesuai gambar Anda */
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-logout-new:hover {
+    background-color: #f35525; /* Berubah oranye saat di-hover */
+}
