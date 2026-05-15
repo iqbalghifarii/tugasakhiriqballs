@@ -539,6 +539,18 @@
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
 
+<script>
+function handleLogout() {
+    const konfirmasi = confirm("Apakah Anda yakin ingin keluar dari akun IqbalEstate?");
+    if (konfirmasi) {
+        alert("Anda telah berhasil keluar. Sampai jumpa kembali!");
+        window.location.href = "login/index.html";
+    } else {
+        event.preventDefault();
+    }
+}
+</script>
+  
 </body>
 
 </html>
