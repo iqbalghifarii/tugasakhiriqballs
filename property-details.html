@@ -338,5 +338,35 @@
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Cek apakah ada data login di browser
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    const navLogin = document.getElementById("nav-login");
+    const navUser = document.getElementById("nav-user");
+
+    if (isLoggedIn === "true") {
+        // Jika sudah login, sembunyikan tombol Masuk, tampilkan tombol Keluar
+        navLogin.style.display = "none";
+        navUser.style.display = "flex"; 
+    } else {
+        // Jika belum login, tampilkan tombol Masuk, sembunyikan tombol Keluar
+        navLogin.style.display = "block";
+        navUser.style.display = "none";
+    }
+});
+
+// Fungsi Logout
+function handleLogout() {
+    if (confirm("Apakah Anda yakin ingin keluar?")) {
+        // Hapus status login
+        localStorage.removeItem("isLoggedIn");
+        alert("Anda telah keluar.");
+        window.location.reload(); // Segarkan halaman untuk memperbarui menu
+    }
+}
+</script>
+  
   </body>
 </html>
