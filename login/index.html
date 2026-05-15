@@ -71,20 +71,17 @@
   </script>
 
 <script>
+// Penempatan: Di dalam script submit form login Anda
 document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Mencegah reload halaman otomatis
+    e.preventDefault();
+    
+    // Ambil nilai dari input nama/email (sesuaikan selectornya)
+    const namaUser = document.querySelector('input[type="text"]').value || "User";
 
-    // Simulasi Login Berhasil
-    // Di sini Anda bisa menambahkan validasi username/password jika perlu
-    
-    // 1. Simpan status login di browser
     localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("userName", namaUser); // Menyimpan nama asli yang diinput
     
-    // 2. Beri pesan sambutan yang natural
-    alert("Selamat datang kembali di IqbalEstate!");
-    
-    // 3. Arahkan kembali ke halaman utama
-    // Gunakan ../index.html jika file login ada di dalam folder 'login'
+    alert("Selamat datang, " + namaUser + "!");
     window.location.href = "../index.html"; 
 });
 </script>
