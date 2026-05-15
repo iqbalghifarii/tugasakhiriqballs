@@ -94,18 +94,21 @@
                         <h1 style="color: #000000; font-weight: 800; text-transform: uppercase;">IQBAL<span style="color: #f35525;">ESTATE</span></h1>
                     </a>
                     <ul class="nav">
-                      <li><a href="index.html">Beranda</a></li>
-                      <li><a href="properties.html">Properti</a></li>
-                      <li><a href="property-details.html">Detail Properti</a></li>
-                      <li><a href="contact.html" class="active">Hubungi Kami</a></li>
-                      <li class="login-item">
-            <a href="login/index.html"><i class="fa fa-user"></i> Masuk</a>
-        </li>
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="properti.html">Properti</a></li>
+    <li><a href="property-details.html">Detail Properti</a></li>
+    <li><a href="contact.html">Kontak Kami</a></li>
 
-        <li class="schedule-item">
-            <a href="#"><i class="fa fa-calendar"></i> Jadwalkan Kunjungan</a>
-        </li>
-                  </ul>   
+    <li id="nav-login">
+        <a href="login/index.html"><i class="fa fa-user"></i> Masuk</a>
+    </li>
+
+    <li id="nav-user" style="display: none;">
+        <span class="user-name">Halo, Iqbal</span>
+        <a href="#" class="btn-logout" onclick="handleLogout()">Keluar</a>
+    </li>
+
+    </ul>   
                     
                     </nav>
             </div>
@@ -208,5 +211,35 @@
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Cek apakah ada data login di browser
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    const navLogin = document.getElementById("nav-login");
+    const navUser = document.getElementById("nav-user");
+
+    if (isLoggedIn === "true") {
+        // Jika sudah login, sembunyikan tombol Masuk, tampilkan tombol Keluar
+        navLogin.style.display = "none";
+        navUser.style.display = "flex"; 
+    } else {
+        // Jika belum login, tampilkan tombol Masuk, sembunyikan tombol Keluar
+        navLogin.style.display = "block";
+        navUser.style.display = "none";
+    }
+});
+
+// Fungsi Logout
+function handleLogout() {
+    if (confirm("Apakah Anda yakin ingin keluar?")) {
+        // Hapus status login
+        localStorage.removeItem("isLoggedIn");
+        alert("Anda telah keluar.");
+        window.location.reload(); // Segarkan halaman untuk memperbarui menu
+    }
+}
+</script>
+  
   </body>
 </html>
