@@ -90,23 +90,13 @@
               <h1 style="color: #000000; font-weight: 800; text-transform: uppercase;">IQBAL<span style="color: #f35525;">ESTATE</span></h1>
             </a>
             <ul class="nav">
-    <li><a href="index.html">Beranda</a></li>
-    <li><a href="properti.html">Properti</a></li>
-    <li><a href="property-details.html" class="active">Detail Properti</a></li>
-    <li><a href="kontak.html">Kontak Kami</a></li>
-
-    <li class="user-logged-in">
-        <span class="user-name"><i class="fa fa-user"></i> Halo, Iqbal</span>
-        <a href="login/index.html" class="btn-logout" onclick="handleLogout()">
-            <i class="fa fa-sign-out-alt"></i> Keluar
-        </a>
-    </li>
-
-    <li class="schedule-item">
-        <a href="#"><i class="fa fa-calendar"></i> Jadwalkan Kunjungan</a>
-    </li>
-</ul>
-            
+              <li><a href="index.html" class="active">Beranda</a></li>
+              <li><a href="properties.html">Properti</a></li>
+              <li><a href="property-details.html">Detail Properti</a></li>
+              <li><a href="contact.html">Kontak Kami</a></li>
+              <li><a href="#"><i class="fa fa-calendar"></i> Jadwalkan Kunjungan</a></li>
+            </ul>
+         
             </nav>
         </div>
       </div>
@@ -538,18 +528,6 @@
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
-
-<script>
-function handleLogout() {
-    const konfirmasi = confirm("Apakah Anda yakin ingin keluar dari akun IqbalEstate?");
-    if (konfirmasi) {
-        alert("Anda telah berhasil keluar. Sampai jumpa kembali!");
-        window.location.href = "login/index.html";
-    } else {
-        event.preventDefault();
-    }
-}
-</script>
   
 </body>
 
