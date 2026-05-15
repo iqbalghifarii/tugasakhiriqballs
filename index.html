@@ -539,30 +539,28 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // Cek apakah ada data login di browser
     const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const savedName = localStorage.getItem("userName"); // Mengambil nama yang disimpan
 
     const navLogin = document.getElementById("nav-login");
     const navUser = document.getElementById("nav-user");
+    const displayName = document.getElementById("display-name");
 
     if (isLoggedIn === "true") {
-        // Jika sudah login, sembunyikan tombol Masuk, tampilkan tombol Keluar
         navLogin.style.display = "none";
-        navUser.style.display = "flex"; 
-    } else {
-        // Jika belum login, tampilkan tombol Masuk, sembunyikan tombol Keluar
-        navLogin.style.display = "block";
-        navUser.style.display = "none";
+        navUser.style.display = "flex"; // Gunakan flex agar CSS kita bekerja
+        
+        // Ganti "Halo, Iqbal" dengan nama asli dari login
+        if (savedName) {
+            displayName.innerText = "Halo, " + savedName;
+        }
     }
 });
 
-// Fungsi Logout
 function handleLogout() {
     if (confirm("Apakah Anda yakin ingin keluar?")) {
-        // Hapus status login
-        localStorage.removeItem("isLoggedIn");
-        alert("Anda telah keluar.");
-        window.location.reload(); // Segarkan halaman untuk memperbarui menu
+        localStorage.clear(); // Menghapus status login dan nama sekaligus
+        window.location.reload();
     }
 }
 </script>
