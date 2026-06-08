@@ -45,6 +45,26 @@
     color: #fff !important;
     transform: scale(1.05);
   }
+  /* Menyamakan tinggi baris kontainer navigasi user */
+.header-area .main-nav ul.nav li.user-container {
+    display: flex !important;
+    align-items: center !important; /* Menjaga teks & tombol pas di tengah vertikal */
+    gap: 15px !important;           /* Memberi jarak horizontal antara teks dan tombol */
+    height: 80px !important;        /* Mengikuti tinggi navbar bawaan template */
+}
+
+/* Meriset tinggi baris bawaan template yang membuat teks anjlok ke bawah */
+.user-greeting {
+    line-height: normal !important; 
+    display: inline-block !important;
+    white-space: nowrap !important; /* Mencegah teks patah jadi 2 baris */
+}
+
+/* Meriset tinggi baris pada tombol keluar agar teks di dalam tombol tetap di tengah */
+.btn-logout-new {
+    line-height: normal !important;
+    display: inline-block !important;
+}
 </style>
   
 </head>
