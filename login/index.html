@@ -40,50 +40,31 @@
 </div>
 
   <script>
-    const loginForm = document.getElementById('loginForm');
-    
-    loginForm.addEventListener('submit', function(e) {
-      e.preventDefault(); // Menghentikan refresh halaman
+  const loginForm = document.getElementById('loginForm');
+  
+  loginForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // Menghentikan refresh halaman saat tombol ditekan
 
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
+    // Mengambil nilai input username dan password
+    const usernameInput = document.getElementById('username').value.trim();
+    const passwordInput = document.getElementById('password').value;
 
-      // DATA AKUN DEMO (Bisa kamu info ke guru/penguji)
-      const validEmail = "admin@villa.com";
-      const validPass = "12345";
+    // Batasan Khusus: Hanya menerima username "heri" dan password "123"
+    if (usernameInput === "heri" && passwordInput === "123") {
+      
+      // Simpan status ke memori browser (localStorage) agar dibaca semua menu
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userName", "Heri"); // Disimpan dengan huruf kapital "Heri"
 
-      // LOGIKA LOGIN
-      if (email === validEmail && password === validPass) {
-        alert("Login Berhasil! Selamat datang di Properti Villa.");
-        // Pastikan path ../index.html benar (naik satu folder ke file utama)
-        window.location.href = "../index.html"; 
-      } 
-      // OPSIONAL: Jika ingin mempermudah penguji (asal isi langsung masuk)
-      // Gunakan logika ini jika kamu tidak ingin membatasi akun:
-      else if (email !== "" && password !== "") {
-        alert("Login Berhasil menggunakan mode tamu!");
-        window.location.href = "../index.html";
-      }
-      else {
-        alert("Gagal Masuk! Periksa kembali email dan kata sandi Anda.");
-      }
-    });
-  </script>
-
-<script>
-// Penempatan: Di dalam script submit form login Anda
-document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Ambil nilai dari input nama/email (sesuaikan selectornya)
-    const namaUser = document.querySelector('input[type="text"]').value || "User";
-
-    localStorage.setItem("isLoggedIn", "true");
-    localStorage.setItem("userName", namaUser); // Menyimpan nama asli yang diinput
-    
-    alert("Selamat datang, " + namaUser + "!");
-    window.location.href = "../index.html"; 
-});
+      alert("Login Berhasil! Selamat datang, Heri.");
+      
+      // Pindah ke halaman utama Beranda
+      window.location.href = "../index.html"; 
+    } else {
+      // Jika yang dimasukkan bukan heri / 123
+      alert("Gagal Masuk! Username atau Password salah.");
+    }
+  });
 </script>
   
 </body>
