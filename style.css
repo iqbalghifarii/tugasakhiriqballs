@@ -92,3 +92,58 @@ a {
 .btn-logout-new:hover {
     background-color: #f35525; /* Berubah oranye saat di-hover */
 }
+
+/* Styling Tombol Masuk Modern untuk IqbalEstate */
+
+/* Menghilangkan float bawaan template agar align center dengan menu lain */
+.header-area .main-nav ul.nav li.login-item {
+    float: none !important;
+    display: flex;
+    align-items: center;
+    margin-left: 15px; /* Memberi jarak dari menu Kontak Kami */
+}
+
+.btn-login-modern {
+    background-color: #f35525 !important; /* Warna oranye IqbalEstate */
+    color: #fff !important; /* Teks Putih */
+    padding: 10px 25px !important; /* Spasi dalam tombol */
+    border-radius: 25px !important; /* Bentuk lonjong (Pill-shaped) */
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize; /* Hanya huruf depan kapital */
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease; /* Transisi halus untuk efek hover */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Jarak antara ikon dan teks */
+    box-shadow: 0px 4px 10px rgba(243, 85, 37, 0.3); /* Bayangan oranye lembut */
+    border: none;
+    text-decoration: none !important;
+}
+
+/* Efek saat mouse mengarah ke tombol (Hover) */
+.btn-login-modern:hover {
+    background-color: #1e1e1e !important; /* Berubah menjadi hitam saat di-hover */
+    transform: translateY(-2px); /* Tombol sedikit terangkat ke atas */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Bayangan menjadi lebih tegas */
+    color: #fff !important;
+}
+
+/* Sedikit penyesuaian untuk ikon di dalam tombol */
+.btn-login-modern i {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* Responsif Mobile: Pastikan tombol tidak terlalu besar di layar kecil */
+@media (max-width: 767px) {
+    .header-area .main-nav ul.nav li.login-item {
+        margin-left: 0;
+        margin-top: 15px;
+        justify-content: center;
+    }
+    .btn-login-modern {
+        padding: 8px 20px !important;
+        font-size: 13px;
+    }
+}
