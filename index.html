@@ -40,85 +40,10 @@
     color: #fff;
     transform: scale(1.1);
   }
-  /* --- KODE BARU UNTUK MENYEJAJARKAN MENU --- */
-
-  /* Memaksa list item menggunakan Flexbox agar sejajar vertikal pas di tengah */
-  .header-area .main-nav ul.nav li.login-item,
-  .header-area .main-nav ul.nav li.user-container {
-    float: none !important;
-    display: flex !important;
-    align-items: center !important;
-    height: 80px; /* Menyamakan tinggi dengan navigasi bawaan template */
-    margin-left: 20px !important;
-  }
-
-  /* Mengatur jarak antara tulisan sapaan dan tombol keluar */
-  .header-area .main-nav ul.nav li.user-container {
-    gap: 12px;
-  }
-
-  /* Menetralkan paksaan tinggi baris teks bawaan template */
-  .user-greeting {
-    font-size: 14px;
-    font-weight: 600;
-    color: #1e1e1e;
-    line-height: normal !important;
-  }
-
-  /* Merapikan tombol Keluar */
-  .btn-logout-new {
-    background-color: #1e1e1e;
-    color: #fff !important;
-    padding: 8px 16px !important;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-    text-decoration: none !important;
-    line-height: normal !important;
-    transition: all 0.3s ease;
-  }
-
   .btn-logout-new:hover {
-    background-color: #f35525 !important; /* Berubah oranye khas IqbalEstate */
+    background-color: #f35525 !important; /* Berubah jadi oranye IqbalEstate saat di-hover */
     color: #fff !important;
     transform: scale(1.05);
-  }
-
-  /* Merapikan tombol Masuk agar presisi di tengah */
-  .btn-login-modern {
-    background-color: #f35525 !important;
-    color: #fff !important;
-    padding: 10px 20px !important;
-    border-radius: 25px !important;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: capitalize;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0px 4px 10px rgba(243, 85, 37, 0.3);
-    border: none;
-    text-decoration: none !important;
-    line-height: normal !important;
-  }
-
-  .btn-login-modern:hover {
-    background-color: #1e1e1e !important;
-    transform: translateY(-2px);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Penyesuaian agar tidak berantakan saat dibuka lewat HP */
-  @media (max-width: 767px) {
-    .header-area .main-nav ul.nav li.login-item,
-    .header-area .main-nav ul.nav li.user-container {
-      margin-left: 0 !important;
-      justify-content: center !important;
-      height: auto !important;
-      padding: 10px 0;
-    }
   }
 </style>
   
