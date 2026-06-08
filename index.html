@@ -45,6 +45,40 @@
     color: #fff !important;
     transform: scale(1.05);
   }
+  /* Mengatur wadah menu user agar berbaris ke samping di dalam navbar */
+  .header-area .main-nav ul.nav li.user-container {
+    float: none !important;
+    display: flex !important;
+    flex-direction: row !important; /* Memaksa isi elemen berjejer ke samping */
+    align-items: center !important;    /* Sejajar sempurna di tengah secara vertikal */
+    justify-content: center !important;
+    gap: 12px !important;          /* Memberikan jarak horizontal antara teks dan tombol */
+    height: 80px !important;       /* Menyamakan tinggi dengan area menu navigasi */
+    margin-left: 15px !important;
+  }
+
+  /* Merapikan teks sapaan */
+  .user-greeting {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e1e1e;
+    line-height: normal !important; /* Menghilangkan tinggi baris default template */
+    white-space: nowrap !important; /* Mencegah teks patah menjadi dua baris */
+  }
+
+  /* Merapikan tombol Keluar */
+  .btn-logout-new {
+    background-color: #1e1e1e;
+    color: #fff !important;
+    padding: 6px 14px !important;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none !important;
+    line-height: normal !important; /* Menghilangkan tinggi baris default template */
+    display: inline-block !important;
+    transition: all 0.3s ease;
+  }
 </style>
   
 </head>
@@ -555,7 +589,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (isLoggedIn === "true") {
         navLogin.style.display = "none";
-        navUser.style.display = "flex"; // Gunakan flex agar CSS kita bekerja
+        navUser.style.setProperty('display', 'flex', 'important'); // SUNTING BARIS INI
         
         // Ganti "Halo, Iqbal" dengan nama asli dari login
         if (savedName) {
